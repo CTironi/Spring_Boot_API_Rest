@@ -19,6 +19,9 @@ public class Telefono implements Serializable {
     @Column(name = "tel_id", nullable = false)
     private Integer id;
 
+    /**
+     * Punto de enlace con la entidad Contacto (un contacto puede tener muchos números de teléfono)
+     */
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Contacto.class, optional = false)
     @JoinColumn(name = "tel_contacto_id", nullable = false)
     @JsonBackReference
